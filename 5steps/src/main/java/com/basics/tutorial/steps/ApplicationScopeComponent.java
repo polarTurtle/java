@@ -5,12 +5,11 @@ import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
 
 import com.basics.tutorial.componentscan.ComponentPersonDAO;
 
-@Configuration
-@ComponentScan
+@Component
 @ComponentScan("com.basics.tutorial.componentscan")
 public class ApplicationScopeComponent {
 	

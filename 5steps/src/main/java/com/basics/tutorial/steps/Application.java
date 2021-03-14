@@ -16,6 +16,8 @@ public class Application {
 		
 		PersonDAO personDAO = applicationContext.getBean(PersonDAO.class);
 		
+		System.out.println("fixed?");
+		
 
 	}
 

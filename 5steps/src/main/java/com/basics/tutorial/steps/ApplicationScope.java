@@ -2,22 +2,25 @@ package com.basics.tutorial.steps;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.boot.SpringApplication;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.stereotype.Component;
 
 import com.basics.tutorial.steps.scope.PersonDAO;
 
-@Configuration
+
+@Component
 @ComponentScan
+@PropertySource("classpath:app.properties")
 public class ApplicationScope {
 	
 	private static Logger LOGGER = LoggerFactory.getLogger(ApplicationScope.class);
 
 	public static void main(String[] args) {
 		
-		ApplicationContext applicationContext = new AnnotationConfigApplicationContext(ApplicationScope.class);
+		ApplicationContext applicationContext = SpringApplication.run(ApplicationScope.class, args);
 		
 		PersonDAO personDAO = applicationContext.getBean(PersonDAO.class);
 		
